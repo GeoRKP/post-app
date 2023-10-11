@@ -6,11 +6,11 @@ const PostEntity = require('./model/Post').PostEntity
 
 const dataSource = new typeorm.DataSource({
     type: "mariadb",
-    host: "83.212.120.95",
+    host: process.env.HOST,
     port: 3306,
-    username: "cf4",
-    password: "cf42023",
-    database: "codingfactory4",
+    username: process.env.USERNAME,
+    password: process.env.PASSWORD,
+    database: process.env.DB,
     entities: [CategoryEntity, PostEntity],
     synchronize: true
 })
